@@ -127,3 +127,69 @@ generate_powerball_numbers()
 
 Execute the function: Calls the generate_powerball_numbers function to run the program.
 
+Friday Project #3
+Number Guessing Game
+
+Description:
+This Python program is a simple number guessing game where the computer selects a secret number between 1 and 10. The user attempts to guess the number, and the program provides feedback on whether the guess is correct. The game continues until the user guesses correctly or decides to quit.
+
+Code:
+
+import random
+
+Import the random module: This module is necessary for generating a random secret number.
+
+def number_guessing_game():
+    # Greeting message
+    print("Welcome to the Number Guessing Game!")
+    play_game = input("Do you want to play? (yes/no): ").strip().lower()
+
+Define the number_guessing_game function: This function contains the logic for the game.
+Greeting messages: Welcomes the user and asks if they want to play. The input is converted to lowercase for easier comparison.
+
+    # Check if the user wants to play
+    if play_game == "no":
+        print("Maybe next time!")
+        return  # End the program
+
+User decision handling: If the user answers "no", a farewell message is printed, and the function returns, ending the program.
+
+    elif play_game == "yes":
+        # Generate a secret number between 1 and 10
+        secret_number = random.randint(1, 10)
+
+Proceed if the user wants to play: If the user answers "yes", a random integer between 1 and 10 is generated and stored as the secret number.
+
+        # Loop until the user guesses the correct number
+        while True:
+            try:
+                guess = int(input("Guess a number between 1 and 10: "))
+
+Start an infinite loop: The program enters a loop where it will continue asking the user to guess.
+User input: The program prompts the user to enter their guess and attempts to convert it to an integer.
+
+                if guess == secret_number:
+                    print("Congratulations! You've guessed the number!")
+                    break  # Exit the loop when guessed correctly
+
+Check the guess: If the user’s guess matches the secret number, a congratulatory message is printed, and the loop is exited.
+
+                else:
+                    print("Try again!")  # Prompt the user to guess again
+
+Incorrect guess: If the guess is incorrect, the program prompts the user to try again.
+
+            except ValueError:
+                print("Please enter a valid number between 1 and 10.")
+
+Input validation: If the user enters a non-integer value, a ValueError is caught, and the program prompts the user to enter a valid number.
+
+    # Farewell message
+    print("Thank you for playing! Goodbye!")
+
+Farewell message: After the user guesses correctly or quits, a thank you message is printed.
+
+    # Run the number guessing game
+    number_guessing_game()
+
+Execute the function: The number_guessing_game function is called to start the game.
