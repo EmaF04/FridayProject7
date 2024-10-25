@@ -80,3 +80,50 @@ def mad_lib():
 
 Friday Project #2:
 
+PowerBall Number Generator
+Description
+This Python program generates random lottery numbers for PowerBall tickets. It selects five unique numbers from a range of 1 to 69 (white balls) and one number from a range of 1 to 26 (red ball). The program formats the output according to specified requirements.
+
+Code
+import random
+Import the random module: This module is essential for generating random numbers.
+
+def generate_powerball_numbers():
+    # Greeting message
+    print("Welcome to the PowerBall Number Generator!")
+    print("This program will generate your lottery numbers for you.")
+
+Define the generate_powerball_numbers function: This function encapsulates the logic for generating PowerBall numbers.
+Greeting messages: Introduces the user to the program's purpose.
+
+    # Generate five white ball numbers (1-69)
+    white_balls = random.sample(range(1, 70), 5)
+
+Generate white ball numbers: Uses random.sample to select five unique numbers from the range of 1 to 69.
+
+    # Generate one red ball number (1-26)
+    red_ball = random.randint(1, 26)
+
+Generate the red ball number: Uses random.randint to pick one number from the range of 1 to 26.
+
+    # Sort the white ball numbers for better readability
+    white_balls.sort()
+
+Sort the white ball numbers: This step arranges the white ball numbers in ascending order for easier readability.
+
+    # Print the generated numbers with specified formatting
+    print("Your PowerBall numbers are:")
+    print(" ".join(map(str, white_balls)) + "   " + str(red_ball))
+
+Output formatting: The white ball numbers are converted to strings and joined with a single space between them. Three spaces are included before the red ball number for the specified formatting.
+
+    # Farewell message
+    print("\nGood luck with your lottery ticket!")
+
+Farewell message: Concludes the program with a good luck message for the user.
+
+# Run the PowerBall number generator
+generate_powerball_numbers()
+
+Execute the function: Calls the generate_powerball_numbers function to run the program.
+
