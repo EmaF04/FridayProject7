@@ -20,7 +20,7 @@ Another food
 The user inputs are then inserted into a pre-defined story template, which is displayed at the end.
 
 Code Breakdown:
-def mad_lib():
+    def mad_lib():
     # Define a function called mad_lib that contains the game logic.
     
     print("Welcome to the Mad Libs game!")
@@ -122,8 +122,8 @@ Output formatting: The white ball numbers are converted to strings and joined wi
 
 Farewell message: Concludes the program with a good luck message for the user.
 
-# Run the PowerBall number generator
-generate_powerball_numbers()
+    # Run the PowerBall number generator
+    generate_powerball_numbers()
 
 Execute the function: Calls the generate_powerball_numbers function to run the program.
 
@@ -284,8 +284,8 @@ def brownText(text):
 
 Define brownText function: This function returns the input string formatted to display in brown using the extended color code \033[38;5;94m.
 
-# Main program logic
-def main():
+    # Main program logic
+    def main():
 
 Define main function: This function contains the main logic of the program.
 
