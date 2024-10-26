@@ -193,3 +193,58 @@ Farewell message: After the user guesses correctly or quits, a thank you message
     number_guessing_game()
 
 Execute the function: The number_guessing_game function is called to start the game.
+
+Friday Project #4
+
+Trivia Quiz Program
+Description:
+This Python program is a simple trivia quiz that displays questions from a predefined dictionary. Users can input their answers, and the program provides immediate feedback on whether their answers are correct or incorrect.
+
+Code:
+
+def trivia_quiz():
+    # Define a dictionary with trivia questions and answers
+    questions = {
+        "What is the capital of France?": "Paris",
+        "What is 5 + 7?": "12",
+        "Who wrote 'Romeo and Juliet'?": "Shakespeare",
+        "What is the smallest planet in our solar system?": "Mercury",
+        "What year did the Titanic sink?": "1912"
+    }
+
+Define the trivia_quiz function: This function contains the main logic for the trivia quiz.
+Dictionary of questions: A dictionary called questions is created, where:
+Keys are the trivia questions.
+Values are the correct answers to those questions.
+
+    # Iterate through the questions dictionary
+    for question, correct_answer in questions.items():
+        print(question)  # Display the question
+
+Loop through the dictionary: A for loop iterates over each question and its corresponding correct answer.
+Display the question: The current question is printed to the console.
+
+        user_answer = input("Your answer: ").strip()  # Prompt user for their answer
+
+User input: The program prompts the user to input their answer, stripping any leading or trailing whitespace
+
+        # Check if the user's answer is correct
+        if user_answer.lower() == correct_answer.lower():
+            print("Correct! Well done.\n")  # Feedback for correct answer
+
+Check the answer: The program checks if the user's answer (converted to lowercase) matches the correct answer (also converted to lowercase) to ensure case insensitivity.
+Feedback for correct answer: If the answer is correct, the user receives a congratulatory message.
+
+        else:
+            print(f"Incorrect! The correct answer is: {correct_answer}\n")  # Feedback for incorrect answer
+
+Feedback for incorrect answer: If the answer is incorrect, the program informs the user of the correct answer.
+
+    print("Thanks for playing the trivia quiz!")  # Farewell message
+
+Farewell message: After all questions have been answered, a thank you message is displayed.
+
+    # Run the trivia quiz
+    trivia_quiz()
+
+Execute the function: The trivia_quiz function is called to start the quiz.
