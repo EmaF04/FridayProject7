@@ -321,3 +321,128 @@ Handle invalid input: If the user inputs an invalid color, a message is displaye
     main()
 
 Execute the program: The main function is called to start the program when the script is run directly.
+
+Friday Project #6:
+Bank Account Management Program
+
+Description:
+This Python program allows users to manage their bank accounts interactively. Users can deposit money, withdraw money, and check their account balance. The program utilizes a class structure to encapsulate the bank account's functionality.
+
+Code:
+
+class BankAccount:
+
+Define BankAccount class: This class represents a bank account and contains methods to manage the account.
+
+    def __init__(self, account_number):
+        self.account_number = account_number  # Account number
+        self.balance = 0.0  # Initial balance
+
+Constructor (__init__ method): Initializes a new BankAccount instance with:
+account_number: The account number provided by the user.
+balance: Set to 0.0 to represent the starting balance.
+
+    def deposit(self, amount):
+        """Deposit money into the account."""
+
+Define deposit method: This method allows the user to deposit a specified amount into their account.
+
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposited: ${amount:.2f}")
+
+Check deposit validity: If the amount is positive, it is added to the balance, and a confirmation message is printed.
+
+        else:
+            print("Deposit amount must be positive.")
+
+Error handling: If the deposit amount is not positive, an error message is printed.
+
+    def withdraw(self, amount):
+        """Withdraw money from the account."""
+
+Define withdraw method: This method allows the user to withdraw a specified amount from their account.
+
+        if amount > 0:
+            if amount <= self.balance:
+                self.balance -= amount
+                print(f"Withdrew: ${amount:.2f}")
+
+Check withdrawal validity: If the amount is positive and less than or equal to the balance, it is subtracted from the balance, and a confirmation message is printed.
+
+            else:
+                print("Insufficient funds.")
+
+Error handling: If the withdrawal amount exceeds the balance, an error message is displayed.
+
+        else:
+            print("Withdrawal amount must be positive.")
+
+Error handling: If the withdrawal amount is not positive, an error message is printed.
+
+    def check_balance(self):
+        """Check the current balance."""
+
+Define check_balance method: This method displays the current account balance.
+
+        print(f"Current balance: ${self.balance:.2f}")
+
+Display balance: Prints the current balance formatted to two decimal places.
+
+def main():
+
+Define main function: This function contains the main logic for user interaction with the bank account.
+
+    account_number = input("Enter your account number: ")
+    account = BankAccount(account_number)
+
+Create a bank account instance: Prompts the user to enter their account number and creates a BankAccount instance.
+
+    while True:
+
+Start an indefinite loop: This loop will continue until the user chooses to exit.
+
+        print("\nOptions:")
+        print("a) Deposit Money")
+        print("b) Withdraw Money")
+        print("c) Check Balance")
+        print("d) Exit")
+
+Display menu options: Shows the user the available actions they can take.
+
+        choice = input("Choose an option (a/b/c/d): ").strip().lower()
+
+Get user choice: Prompts the user to select an option, stripping whitespace and converting to lowercase.
+
+        if choice == 'a':
+            amount = float(input("Enter the amount to deposit: "))
+            account.deposit(amount)
+
+Deposit option: If the user chooses to deposit, it prompts for an amount and calls the deposit method.
+
+        elif choice == 'b':
+            amount = float(input("Enter the amount to withdraw: "))
+            account.withdraw(amount)
+
+Withdraw option: If the user chooses to withdraw, it prompts for an amount and calls the withdraw method.
+
+        elif choice == 'c':
+            account.check_balance()
+
+Check balance option: If the user chooses to check their balance, the check_balance method is called.
+
+        elif choice == 'd':
+            print("Exiting the program. Goodbye!")
+            break
+
+Exit option: If the user chooses to exit, a goodbye message is printed, and the loop is broken.
+
+        else:
+            print("Invalid choice. Please select a valid option.")
+
+Invalid choice handling: If the user inputs an invalid option, an error message is displayed.
+
+    # Run the main function
+    main()
+
+Execute the program: The main function is called when the script is run directly.
