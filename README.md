@@ -248,3 +248,76 @@ Farewell message: After all questions have been answered, a thank you message is
     trivia_quiz()
 
 Execute the function: The trivia_quiz function is called to start the quiz.
+
+Friday Project #5:
+
+Description:
+This Python program allows users to display text in different colors in the console. It defines five functions, each designed to format a string of text in a specific color. The user can also input their own text and choose the color for display.
+
+Code:
+
+    # ANSI escape codes for text colors
+Comment: This line indicates that ANSI escape codes will be used to change the text colors in the console.
+
+def redText(text):
+    return f"\033[91m{text}\033[0m"  # Red text
+
+Define redText function: This function takes a string input (text) and returns it formatted to display in red using the ANSI escape code \033[91m.
+
+def blueText(text):
+    return f"\033[94m{text}\033[0m"  # Blue text
+
+Define blueText function: This function returns the input string formatted to display in blue using the ANSI escape code \033[94m.
+
+def greenText(text):
+    return f"\033[92m{text}\033[0m"  # Green text
+
+Define greenText function: This function returns the input string formatted to display in green using the ANSI escape code \033[92m.
+
+def yellowText(text):
+    return f"\033[93m{text}\033[0m"  # Yellow text
+
+Define yellowText function: This function returns the input string formatted to display in yellow using the ANSI escape code \033[93m.
+
+def brownText(text):
+    return f"\033[38;5;94m{text}\033[0m"  # Brown text (using extended colors)
+
+Define brownText function: This function returns the input string formatted to display in brown using the extended color code \033[38;5;94m.
+
+# Main program logic
+def main():
+
+Define main function: This function contains the main logic of the program.
+
+    # Call each function and print the text in the corresponding color
+    print(redText("This text is red!"))
+    print(blueText("This text is blue!"))
+    print(greenText("This text is green!"))
+    print(yellowText("This text is yellow!"))
+    print(brownText("This text is brown!"))
+
+Demonstrate color functions: Calls each color function and prints sample text in the corresponding color.
+
+    # User input for color choice and text
+    color_choice = input("Choose a color (red, blue, green, yellow, brown): ").strip().lower()
+
+Prompt for user input: Asks the user to choose a color and strips any leading/trailing whitespace, converting the input to lowercase.
+
+    user_text = input("Enter the text you want to display: ")
+
+User input for text: Prompts the user to enter the text they wish to display in the chosen color.
+
+    # Display the user-selected color
+    if color_choice == "red":
+        print(redText(user_text))
+
+Check color choice: Depending on the user's input, calls the corresponding color function to display the text in the selected color. This block continues for each color option.
+
+    else:
+        print("Invalid color choice. Please choose from red, blue, green, yellow, or brown.")
+
+Handle invalid input: If the user inputs an invalid color, a message is displayed informing them of the valid options.
+
+    main()
+
+Execute the program: The main function is called to start the program when the script is run directly.
